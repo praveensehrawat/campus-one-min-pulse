@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Campus One-Minute Pulse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Campus One-Minute Pulse</h1>
+    <p>Only what matters today. Nothing extra.</p>
+</header>
+
+<main>
+
+    <!-- Personalization -->
+    <section class="card">
+        <label><strong>You are a:</strong></label>
+        <select id="studentType">
+            <option value="hosteller">Hosteller</option>
+            <option value="dayscholar">Day Scholar</option>
+        </select>
+    </section>
+
+    <!-- Today's Snapshot -->
+    <section class="card">
+        <h2>📌 Today’s Snapshot</h2>
+        <p><strong>Date:</strong> <span id="todayDate"></span></p>
+
+        <div id="messMenu">
+            <p><strong>Mess Menu:</strong></p>
+            <p id="menuText"></p>
+        </div>
+
+        <p><strong>Important Notice:</strong></p>
+<p id="snapshotNotice">Assignment submission today</p>
+<span id="snapshotTag" class="tag urgent">Urgent</span>
+
+
+    <!-- Mail Summarizer -->
+    <section class="card">
+    <h2>📧 Smart Action Summarizer</h2>
+
+    <textarea id="emailInput" placeholder="Paste a college email here..."></textarea>
+    <button onclick="summarizeEmail()">Summarize</button>
+
+    <div id="summaryOutput"></div>
+
+    <!-- Editable Priority -->
+    <div id="priorityEditor" class="hidden">
+        <label><strong>Edit Priority:</strong></label>
+        <select id="prioritySelect" onchange="updatePriority()">
+            <option value="urgent">Urgent</option>
+            <option value="important">Important</option>
+            <option value="fyi">FYI</option>
+        </select>
+    </div>
+</section>
+<!-- 🥗 Mess Intelligence -->
+<section class="card" id="messIntelligence">
+    <h2>🍽️ Mess Intelligence</h2>
+
+
+    <label>Diet Preference:</label>
+    <select id="dietFilter" onchange="updateMealInsights()">
+        <option value="all">All</option>
+        <option value="veg">Veg</option>
+        <option value="protein">High Protein</option>
+    </select>
+
+    <p id="nutritionInfo"></p>
+    <p id="allergenInfo"></p>
+    <p id="popularityInfo"></p>
+    <p id="crowdInfo"></p>
+    <p id="mealRecommendation"></p>
+</section>
+
+<!-- 🏫 Campus Live Pulse -->
+<section class="card">
+    <h2>🏫 Campus Live Pulse</h2>
+
+    <p><strong>Weather:</strong> <span id="weatherStatus"></span></p>
+    <p><strong>WiFi:</strong> <span id="wifiStatus"></span></p>
+    <p><strong>Power:</strong> <span id="powerStatus"></span></p>
+
+    <h3>📢 Announcements</h3>
+    <ul id="announcementList"></ul>
+
+    <h3>⏳ Event Countdown</h3>
+    <p id="eventTimer"></p>
+</section>
+
+
+
+    <!-- Emergency -->
+    <section class="card">
+        <h2>🚨 Emergency Quick Access</h2>
+        <button onclick="toggleEmergency()">Show Emergency Contacts</button>
+
+        <div id="emergencyBox" class="hidden">
+            <p><strong>Security:</strong> 100</p>
+            <p><strong>Medical:</strong> 108</p>
+            <p><strong>Admin Office:</strong> 0123-456789</p>
+        </div>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
